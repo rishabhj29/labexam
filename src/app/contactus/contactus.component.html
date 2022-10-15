@@ -1,0 +1,38 @@
+<section class="full-screen">
+    <img src="https://image.shutterstock.com/image-photo/old-brick-black-color-wall-260nw-1605128917.jpg">
+
+<div class="suraj">
+    
+<button type="button" name="button"  (click)="getInfoFromService1()">Student1</button>
+
+<ul class="listgroup">
+<li *ngFor="let information of Studentinfo1" class="list-group-info">
+
+    {{information}}
+
+</li>
+</ul>
+
+
+<button type="button" name="button" (click)="getInfoFromService2()">Student2</button>
+
+<ul class="listgroup">
+<li *ngFor="let information of Studentinfo2" class="list-group-info">
+
+    {{information}}
+
+</li>
+</ul>
+
+<button type="button" name="button" (click)="getInfoFromService3()">Student3</button>
+
+<ul class="listgroup">
+<li *ngFor="let information of Studentinfo3" class="list-group-info">
+
+    {{information}}
+
+</li>
+</ul>
+</div>
+</section>
+

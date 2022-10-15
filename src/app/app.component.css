@@ -1,0 +1,14 @@
+.navbar
+{
+    background-color:violet;
+}
+.navbar-light .navbar-nav .nav-link
+{
+    color: aliceblue;
+    font-size: 18px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover
+{
+    text-decoration: underline;
+}

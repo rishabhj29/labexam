@@ -1,0 +1,178 @@
+
+
+<div class="row">
+  <div class="col-xl-4"> </div>
+  <div class="col-xl-4">
+
+      
+      <h3>Registration Form</h3>
+
+      <p> <h4>Enter the Details</h4>
+
+    
+          <form  (ngSubmit)="onSubmit(regForm)" #regForm="ngForm" >
+    
+              <div id="reg-data" ngModelGroup="regGrpData" #regData="ngModelGroup"  >
+    
+                  
+                  <div class="form-group">
+          
+                      <label for="reg_name">Name</label>
+          
+                      <input type="text" id="reg_name"  class="form-control "  
+                      ngModel
+                      name="inp_name"
+                      required
+                      #nameRef="ngModel"
+                      [class.is-invalid]="nameRef.invalid && nameRef.touched"
+                    
+
+                      >
+                      <span class="help-block" *ngIf="nameRef.invalid && nameRef.touched" style="color: rgb(143, 6, 6);" >Please enter valid details </span>
+          
+                  </div>
+          
+                  <div class="form-group">
+          
+                      <label for="reg_phone">Phone</label>
+          
+                      <input type="tel" id="reg_phone"  class="form-control"  
+                      ngModel 
+                      name="inp_phone" 
+                      required 
+                      pattern="^\d{10}$"
+                      #phoneRef="ngModel" 
+                      [class.is-invalid]="phoneRef.invalid && phoneRef.touched"
+                      
+                      >
+          
+                      <span class="help-block" *ngIf="phoneRef.invalid && phoneRef.touched" style="color: rgb(143, 6, 6);" >Please enter valid details </span>
+          
+                  </div>
+          
+                  <div class="form-group">
+          
+                      <label for="reg_states">State</label>
+          
+          
+                      <select id="reg_states" class="form-control" 
+                      name="inp_states"
+                      [ngModel]="defaultState"
+                      
+                      >
+          
+                          <option value="Maharashtra">Maharashtra</option>
+                          <option value="Gujarat">Gujarat</option>
+                          <option value="Karnataka">Karnataka</option>
+                          <option value="Madhyapradesh">Madhyapradesh</option>
+          
+                      </select>
+          
+                  
+                  </div>
+          
+          
+                  <div class="form-group">
+          
+                      <label for="reg_email">Email</label>
+          
+                      <input type="text" id="reg_email"  class="form-control"   
+                      ngModel 
+                      name="inp_email" 
+                      required 
+                      email
+                      #emailRef="ngModel" 
+                      [class.is-invalid]="emailRef.invalid && emailRef.touched"
+                      
+                      >
+                      <span class="help-block" *ngIf="emailRef.invalid && emailRef.touched" style="color: rgb(143, 6, 6);" >Please enter valid email </span>
+          
+                  </div>
+                  
+          
+                  <div class="form-group">
+          
+                      <label for="reg_address">Residential Address</label>
+          
+                      <textarea name="inp_address" id="reg_address"  rows="3"
+                          class="form-control"
+                          required
+                          [(ngModel)] = "address"
+                          #addRef="ngModel"
+                          [class.is-invalid]="addRef.invalid && addRef.touched"
+                      ></textarea>
+                      <span class="help-block" *ngIf="addRef.invalid && addRef.touched" style="color: rgb(143, 6, 6);" >Please enter valid address </span>
+          
+                      <p> Your Address: {{address}}</p> 
+          
+                  </div>
+    
+                  <div class="radio" *ngFor="let g of genders">
+    
+                          <label>
+                              <input type="radio"
+                                  id="reg_gender"
+                                  name="inp_genders"
+                                  ngModel
+                                  required
+                                  [value] = "g"
+                                  
+                              >
+                              {{g}}
+    
+                          </label>
+                          
+                  </div>
+    
+              </div>
+    
+                  <button class="btn btn-primary btn-margin" [disabled]="regData.invalid" >Register</button>
+              
+          </form>
+
+       
+          
+          <app-display-details [displayUserDetails]="regDetails"></app-display-details>
+
+  </div>
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form action="action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form> -->

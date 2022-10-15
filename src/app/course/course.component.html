@@ -1,0 +1,19 @@
+<section class="course">
+    <div class="container ">
+        <h1 class="text-center">Available Courses</h1>
+
+        <div class="row mt-5" >
+        <div class="col-lg-3 mb-5" *ngFor="let cs of course">
+            <div class="box shadow-sm" >
+                <img src="{{cs.image}}" width="100%">
+                <h4 class="mt-2">{{cs.name}}</h4>
+                <p class="mt-2">{{cs.discription}}</p>
+                <button class="btn btn-primary btn-sm mt-2">Book Now</button>
+                <h4>{{cs.amount | currency:'INR'}}</h4>
+
+            </div>
+        </div>
+        
+        </div>
+    </div>
+</section>
